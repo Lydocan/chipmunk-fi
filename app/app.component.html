@@ -1,0 +1,12 @@
+<ActionBar title="Chipmunk Fi" class="action-bar"></ActionBar>
+
+<StackLayout>
+    <TextField hint="用户名" autocorrect="false" autocapitalizationType="none" [(ngModel)]="userId"></TextField>
+
+    <Button text="登录" (tap)="login()"></Button>
+    <Button text="认证" (tap)="auth()"></Button>
+
+    <TextView loaded="onTextViewLoaded" [(ngModel)]="jsonStr" hint="{{ tvHint }}" editable="true" class="input input-border"></TextView>
+    <TextView *ngIf="responseMsg" loaded="onTextViewLoaded" [(ngModel)]="responseMsg" hint="{{ tvHint }}" editable="false" class="input input-border"></TextView>
+    <Image *ngIf="isOnline" src="~/images/giphy.webp"></Image>
+</StackLayout>
